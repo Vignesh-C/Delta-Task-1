@@ -5,6 +5,12 @@ function add_mentee()
 	else
 		{var tr=localStorage.getItem('rows');}
 	var x = document.getElementById("Name").value;	
+	for(var i =0 ; i<=tr;i++)
+		if(x==localStorage.getItem(i+'N'))
+		{
+			alert("The name already exists.\nTry again with another name.");
+			return ;
+		}
 	var y = document.getElementById("Rating").value;
 	var z = document.getElementById("Comments").value;
 	localStorage.setItem(tr+'N',x);
