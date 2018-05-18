@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mentee</title>
+	<script type="text/javascript" src="mentee.js"></script>
+	<style type="text/css">
+		form.add
+		{
+			display: inline;
+		}
+		form.edit
+		{
+			display: inline;
+			margin-left: 312px;	
+		}
+		form.sort
+		{
+			display: inline;
+			margin-left: 312px;
+		}
+		form.delete
+		{
+			display: inline;
+			float: right;
+		}		
+		p.head
+		{
+			text-indent: 30mm;
+		}
+	</style>
+<body >
+	<br><br><br><br>
+	<form action="mente.html" class = "add">
+		<input type="submit" value="Add Mentee" >
+	</form>
+	<form class = "edit" action="mentee.html">
+			<input type="submit" value="Edit a mentee" onclick="edit_mentee()">
+	</form>
+	<form class="delete" action="mentee.html">
+		<input type="submit" value="Delete a mentee" onclick="delete_mentee()">
+	</form>
+	<form class="sort" action="mentee.html">
+		<input type="submit" value="Sort the list" onclick="sort()">
+	</form>
+	<pre> <p class="head"><b>Name                           Rating                               Comments</b> </p></pre>
+	<script type="text/javascript">
+		var i=0; 
+		var r =localStorage.getItem('rows');
+		if(r!=null)	
+		{	
+			for(;i<r;i++)
+			{
+				document.write("&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+				document.write(localStorage.getItem(i+'N')+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+				document.write(localStorage.getItem(i+'R')+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+				document.write(localStorage.getItem(i+'C')+"<br>");
+			}
+		}
+		else
+		{
+			document.write("<br><br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The list is empty ");
+		}
+	</script>
+</body>
+</html>
